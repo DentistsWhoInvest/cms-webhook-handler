@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "compile": "tsc && cp package.json ./dist/",
+    "deploy": "gcloud functions deploy cms-webhook-handler --gen2 --runtime=nodejs18 --region=europe-west2 --source=./dist/ --entry-point=startFunction --trigger-http --service-account=cms-webhook-handler@electric-node-426223-s2.iam.gserviceaccount.com"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0"
+  }
+}
